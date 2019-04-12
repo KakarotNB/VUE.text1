@@ -1,6 +1,6 @@
 // 入口文件
 import Vue from 'vue'
-
+// 导入UI组件库
 import { Header } from 'mint-ui'
 Vue.component(Header.name,Header);
 
