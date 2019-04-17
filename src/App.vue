@@ -5,30 +5,33 @@
 
 
     <!--中间部分区域-->
+    <transition>
+      <router-view>
+
+      </router-view>
+    </transition>
+
 
 
     <!--底部区域-->
     <nav class="mui-bar mui-bar-tab">
-      <a class="mui-tab-item mui-active" href="#tabbar">
+      <router-link class="mui-tab-item" to="/home">
         <span class="mui-icon mui-icon-home"></span>
         <span class="mui-tab-label">首页</span>
-      </a>
-      <a class="mui-tab-item" href="#tabbar-with-chat">
-        <span class="mui-icon mui-icon-email"><span class="mui-badge">9</span></span>
+      </router-link>
+      <router-link class="mui-tab-item" to="/member">
+        <span class="mui-icon mui-icon-email"></span>
         <span class="mui-tab-label">会员</span>
-      </a>
-      <a class="mui-tab-item" href="#tabbar-with-contact">
-        <span class="mui-icon mui-icon-contact"></span>
+      </router-link>
+      <router-link class="mui-tab-item" to="/shopcar">
+        <span class="mui-icon-extra mui-icon-extra-cart"><span class="mui-badge">0</span></span>
         <span class="mui-tab-label">购物车</span>
-      </a>
-      <a class="mui-tab-item" href="#tabbar-with-map">
-        <span class="mui-icon mui-icon-gear"></span>
+      </router-link>
+      <router-link class="mui-tab-item" to="/search">
+        <span class="mui-icon mui-icon-search"></span>
         <span class="mui-tab-label">搜索</span>
-      </a>
+      </router-link>
     </nav>
-
-
-    <h1>123</h1>
   </div>
 </template>
 
@@ -39,6 +42,28 @@
 <style lang="scss" scoped>
   .app-container{
     padding: 40px;
+    overflow-x:hidden ;
+  }
+
+  .mui-icon-extra-cart{
+    display: block;
+  }
+
+
+  .v-enter{
+    opacity: 0;
+    transform:translateX(100%);
+  }
+  .v-leave-to{
+    opacity:0;
+    transform: translateX(-100%);
+    position: absolute;
+  }
+
+  .v-enter-active,
+  .v-leave-active{
+    transition:all 0.5s ease-in-out;
+
   }
 
 </style>
